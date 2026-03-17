@@ -115,15 +115,6 @@ async def generate_grounded_answer(
 ) -> str:
     """
     Generate an answer grounded in the retrieved chunks.
-
-    Args:
-        question:         The user's question.
-        retrieved_chunks: List of {chunk_id, score, text} dicts.
-        history:          Prior conversation turns [{role, content}, ...].
-        model:            OpenAI chat model to use.
-
-    Returns:
-        The assistant's answer string.
     """
     client = get_openai_client()
 
