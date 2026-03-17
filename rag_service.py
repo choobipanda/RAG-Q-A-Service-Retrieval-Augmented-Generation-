@@ -55,7 +55,7 @@ async def embed_text(text: str, model: str = "text-embedding-3-small") -> list[f
     Generate a vector embedding for the given text using OpenAI.
     """
     client = get_openai_client()
-    cleaned = text.replace("\n", " ")  # OpenAI recommendation for quality
+    cleaned = text.replace("\n", " ")
     response = await client.embeddings.create(input=cleaned, model=model)
     return response.data[0].embedding
 
@@ -125,7 +125,7 @@ async def generate_grounded_answer(
     response = await client.chat.completions.create(
         model=model,
         messages=messages,
-        temperature=0.2,  # Low temperature for factual grounded answers
+        temperature=0.2,
     )
     return response.choices[0].message.content
 
