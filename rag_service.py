@@ -89,12 +89,12 @@ def cosine_similarity_search(
     scores.sort(key=lambda x: x[1], reverse=True)
     return scores[:k]
 
-SYSTEM_PROMPT = """You are a precise question-answering assistant.
-You ONLY answer based on the provided context passages below.
+SYSTEM_PROMPT = """You are a question-answering assistant.
+Only answer based on the provided context passages below.
 If the answer is not found in the context, say:
 "I don't have enough information in the provided documents to answer that question."
 
-Do NOT use any outside knowledge. Cite which context passage(s) support your answer
+Don't use any outside knowledge. Cite which context support your answer
 by referencing them as [chunk_id] inline where relevant."""
 
 
